@@ -1,0 +1,15 @@
+# Virtual environment folders
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Editor directories
+.vscode/

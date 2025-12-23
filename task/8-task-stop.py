@@ -7,14 +7,20 @@ from task.app.main import run
 #       Default: None
 #  User massage: Explain the key components of a Large Language Model architecture
 
-run(
-    deployment_name='gpt-4o',
-    print_only_content=True,
-    # TODO:
-    #  1. Use `stop` parameter with value "\n\n"
-    #  2. Use `stop` parameter with values ["**Embedding Layer**", "**Transformer Blocks**", "**Training**"]
-    #  3. Optional: Set `print_only_content` as False to see the full JSON and what is the `finish_reason`
-)
+if __name__ == "__main__":
+    # Example 1: stop on two newlines
+    run(
+        deployment_name='gpt-4o',
+        print_only_content=True,
+        stop="\n\n",
+    )
+
+    # Example 2: stop on specific section headers (uncomment to try)
+    # run(
+    #     deployment_name='gpt-4o',
+    #     print_only_content=False,
+    #     stop=["**Embedding Layer**", "**Transformer Blocks**", "**Training**"],
+    # )
 
 # With `stop` parameter we can stop content generation. It can be used for some policies/guardrails. For instance,
 # we are the company with the name `Pear` and we don't want that anybody will see in results that our competitor `Apple`

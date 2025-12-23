@@ -1,3 +1,4 @@
+
 from task.app.main import run
 
 # TODO:
@@ -8,12 +9,14 @@ from task.app.main import run
 #       Default: None or random unless specified on the LLM side
 #  User massage: Name a random animal
 
-run(
-    deployment_name='gpt-4o',
-    # TODO:
-    #  1. Use `seed` parameter with value 42 (or whatever you want)
-    #  2. Use `n` parameter with value 5
-)
+if __name__ == "__main__":
+    # Use a fixed seed to make outputs more deterministic and request multiple choices to compare
+    run(
+        deployment_name='gpt-4o',
+        seed=42,
+        n=5,
+        print_request=False,
+    )
 
 # Check the content in choices. The expected result is that in almost all choices the result will be the same.
 # If you restart the app and retry, it should be mostly the same.

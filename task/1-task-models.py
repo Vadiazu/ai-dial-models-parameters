@@ -11,11 +11,13 @@ from task.app.main import run
 # - claude-3-7-sonnet@20250219
 # - gemini-2.5-pro
 
-run(
-    deployment_name='INSERT_DEPLOYMENT_NAME',
-    print_request=False, # Switch to False if you do not want to see the request in console
-    print_only_content=False, # Switch to True if you want to see only content from response
-)
+if __name__ == "__main__":
+    # Default example: replace deployment_name with any available deployment to try different models
+    run(
+        deployment_name='gpt-4o',
+        print_request=False,  # Set to False to hide request payload in console
+        print_only_content=False,  # Set to True to print only the model content
+    )
 
 # The main goal of this task is to explore the functional capabilities of DIAL to be able to work with different
 # LLMs through unified API
