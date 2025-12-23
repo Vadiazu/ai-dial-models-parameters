@@ -1,0 +1,16 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Visual Studio Code
+.vscode/
+
+# Environment files
+.env
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# OS files
+.DS_Store
+Thumbs.db

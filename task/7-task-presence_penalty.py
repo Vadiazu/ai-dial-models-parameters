@@ -8,12 +8,17 @@ from task.app.main import run
 #       Default: 0.0
 #  User massage: What is an entropy in LLM's responses?
 
-run(
-    deployment_name='gpt-4o',
-    print_only_content=True,
-    # TODO:
-    #  Use `presence_penalty` parameter with different range (-2.0 to 2.0)
-)
+def main():
+    # Try presence_penalty to encourage new topics; values range -2.0 to 2.0
+    run(
+        deployment_name='gpt-4o',
+        print_only_content=True,
+        presence_penalty=1.0,
+    )
+
+
+if __name__ == '__main__':
+    main()
 
 # In the final result, we can see that the higher `presence_penalty` (2.0) the more LLM is trying to add topics that
 # somehow related to the main topic.
